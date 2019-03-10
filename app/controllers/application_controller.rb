@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles/:id/edit' do
-    @articles = Article.find_by_id(params[:id])
+    @article = Article.find_by_id(params[:id])
     erb :edit
   end
 
@@ -41,8 +41,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/articles/:id/delete' do
-    @articles = Article.find_by_id(params[:id])
-    @articles.delete
+    @article = Article.find_by_id(params[:id])
+    @article.delete
     erb :deleted
   end
 
